@@ -1,12 +1,11 @@
 import { useEffect } from "react"
 
-import Endpoint, { NewTab } from "@markup/helpers/Endpoint"
-import Title from "@markup/helpers/Title"
+import { Endpoint, NewTab, PageTitle } from "@markup/helpers"
 import "./Docs.css"
 
 function Docs(): JSX.Element {
   useEffect(() => {
-    document.title = Title.Docs
+    document.title = PageTitle.Docs
   })
 
   return (
@@ -98,7 +97,7 @@ function Docs(): JSX.Element {
         body={
           <span>
             To start using Markup for document annotation,
-            visit the <NewTab endpoint={Endpoint.SetupForm} text="setup"/> page 
+            visit the <NewTab endpoint={Endpoint.Setup} text="setup"/> page 
             and select the quantity of documents you want to annotate
             and populate the remaining fields as described below.
           </span>

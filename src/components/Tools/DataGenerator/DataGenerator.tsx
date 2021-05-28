@@ -1,9 +1,7 @@
-import Tooltip from "@markup/components/Setup/helpers/Tooltip"
-import Title from "@markup/helpers/Title"
+import { useEffect, useState } from "react"
 import { MDBBtn, MDBCol, MDBRow } from "mdbreact"
-import { useState } from "react"
-import { useEffect } from "react"
 
+import { PageTitle, Tooltip } from "@markup/helpers"
 import "./DataGenerator.css"
 
 function DataGenerator(): JSX.Element {
@@ -17,7 +15,7 @@ function DataGenerator(): JSX.Element {
   }
 
   useEffect(() => {
-    document.title = Title.DataGenerator
+    document.title = PageTitle.DataGenerator
   })
 
   return (

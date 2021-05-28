@@ -1,0 +1,19 @@
+input[type="radio"] {
+    visibility: hidden;
+}
+
+.config-label {
+    border-radius: 4px;
+    padding: 3px 5px;
+    color: #1A1E24;
+    white-space: nowrap;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    min-width: 50%;
+    box-shadow: 0px 0.25px #1a1e24;
+}
+
+.config-label-inactive {
+    filter:opacity(55%);
+}

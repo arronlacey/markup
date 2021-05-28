@@ -14,14 +14,26 @@ code {
     monospace;
 }
 
-.primary-color {
+.default-color {
     background-color: #141414 !important;
 }
 
-.primary-color-border {
-    border-color: #141414 !important;
+.primary-color {
+    background-color: #33FFB5 !important;
+    color: #141414 !important;
 }
 
-.primary-color-border:hover {
-    border-color: #141414 !important;
+.primary-color:focus {
+    background-color: #23cf90 !important;
+    color: #141414 !important;
+}
+
+.secondary-color {
+    background-color: rgb(216, 216, 216) !important;
+    color: #141414 !important;
+}
+
+.secondary-color:focus {
+    background-color: rgb(160, 160, 160) !important;
+    color: #141414 !important;
 }

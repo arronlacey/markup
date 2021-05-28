@@ -12,9 +12,9 @@ import {
   MDBNavItem,
   MDBNavLink,
 } from 'mdbreact'
-
-import Endpoint from '@markup/helpers/Endpoint'
 import GitHubButton from 'react-github-btn'
+
+import { Endpoint } from "@markup/helpers"
 import './Nav.css'
 
 function Nav(): JSX.Element {
@@ -25,7 +25,7 @@ function Nav(): JSX.Element {
   }
 
   return (
-    <MDBNavbar dark expand="md" className="navbar-custom primary-color">
+    <MDBNavbar dark expand="md" className="navbar-custom default-color">
       <MDBNavbarBrand>
         <MDBNavLink to={Endpoint.Home}>
           <strong className="white-text font-weight-bold custom-navbar-logo">markup</strong>
@@ -58,7 +58,7 @@ function Nav(): JSX.Element {
           </MDBNavItem>
 
           <MDBNavItem className="nav-item-custom">
-            <MDBNavLink to={Endpoint.SetupForm}>Annotate</MDBNavLink>
+            <MDBNavLink to={Endpoint.Setup}>Annotate</MDBNavLink>
           </MDBNavItem>
 
           <MDBNavItem className="nav-item-custom github">

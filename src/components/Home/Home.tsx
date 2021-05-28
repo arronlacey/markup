@@ -6,13 +6,12 @@ import {
   MDBCardTitle, MDBJumbotron
 } from "mdbreact"
 
-import Endpoint from "@markup/helpers/Endpoint"
-import Title from "@markup/helpers/Title"
+import { Endpoint, PageTitle } from "@markup/helpers"
 import "./Home.css"
 
 function Home(): JSX.Element {
   useEffect(() => {
-    document.title = Title.Home
+    document.title = PageTitle.Home
   })
 
   return (    
@@ -27,10 +26,10 @@ function Home(): JSX.Element {
         </MDBCardText>
         <br/>
         <div className="pt-2">
-          <MDBBtn href={Endpoint.Documentation} className="waves-effect font-weight-bold custom-home-button">
+          <MDBBtn href={Endpoint.Documentation} className="waves-effect font-weight-bold custom-home-button secondary-color">
             Docs
           </MDBBtn>
-          <MDBBtn href={Endpoint.SetupForm} className="waves-effect font-weight-bold custom-home-button custom-home-button-focus">
+          <MDBBtn href={Endpoint.Setup} className="waves-effect font-weight-bold custom-home-button primary-color">
             Annotate
           </MDBBtn>
           <p>

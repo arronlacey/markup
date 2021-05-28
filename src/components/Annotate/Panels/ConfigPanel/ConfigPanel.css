@@ -1,0 +1,14 @@
+.config-input {
+    border-radius: 5px;
+    background-color: rgb(241, 241, 241);
+    outline: none;
+    border: none;
+    padding: 3px 5px;
+    color: #33FFB5;
+    background-color: rgb(83, 83, 83);
+    margin-left: 2.5%;
+}
+
+.config-input::placeholder {
+    color: white;
+}

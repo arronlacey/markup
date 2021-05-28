@@ -1,6 +1,6 @@
 import { MDBLink } from "mdbreact"
 
-import Endpoint from "@markup/helpers/Endpoint"
+import { Endpoint } from "@markup/helpers"
 import "./PageNotFound.css"
 
 function PageNotFound(): JSX.Element {

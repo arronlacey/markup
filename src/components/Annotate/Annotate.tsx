@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react"
 import { MDBAlert, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
-import AnnotationPanel from "@markup/components/Annotate/AnnotationPanel/AnnotationPanel"
-import ConfigPanel from "@markup/components/Annotate/ConfigPanel/ConfigPanel"
-import DocumentPanel from "@markup/components/Annotate/DocumentPanel/DocumentPanel"
-import Endpoint from "@markup/helpers/Endpoint"
-import SessionPanel from "./SessionPanel/SessionPanel"
-import Title from "@markup/helpers/Title"
+import { PageTitle, Endpoint } from "@markup/helpers"
+import ConfigPanel from "@markup/components/Annotate/Panels/ConfigPanel/ConfigPanel"
+import DocumentPanel from "./Panels/DocumentPanel/DocumentPanel"
+import OutputPanel from "./Panels/OutputPanel/OutputPanel"
 import "./Annotate.css"
 
 function Annotate(): JSX.Element {
@@ -14,10 +12,10 @@ function Annotate(): JSX.Element {
   const [successMessage, setSuccessMessage] = useState("")
 
   useEffect(() => {
-    document.title = Title.Annotate
+    document.title = PageTitle.Annotate
 
     if (localStorage.getItem("isSetup") !== "true") {
-      window.location.href = Endpoint.SetupForm
+      window.location.href = Endpoint.Setup
     }
   })
 
@@ -52,7 +50,7 @@ function Annotate(): JSX.Element {
           </MDBCol>
 
           <MDBCol md="4">
-            <AnnotationPanel
+            <OutputPanel
               setErrorMessage={setErrorMessage}
               setSuccessMessage={setSuccessMessage}
             />

@@ -5,13 +5,13 @@ enum Endpoint {
   Repository = "https://github.com/samueldobbie/markup",
   DataGenerator = "/data-generator",
   ConfigCreator = "/config-creator",
-  SetupForm = "/setup",
+  Setup = "/setup",
   Annotate = "/annotate",
   Demo = "/demo",
   PageNotFound = "/404",
 }
 
-export function NewTab(props: any): JSX.Element {
+function NewTab(props: any): JSX.Element {
   return (
     <a
       href={props.endpoint}
@@ -23,4 +23,4 @@ export function NewTab(props: any): JSX.Element {
   )
 }
 
-export default Endpoint
+export {Endpoint, NewTab}
