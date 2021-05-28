@@ -57,13 +57,6 @@ function Annotate(): JSX.Element {
               setSuccessMessage={setSuccessMessage}
             />
           </MDBCol>
-          
-          <MDBCol md="12">
-            <SessionPanel
-              setErrorMessage={setErrorMessage}
-              setSuccessMessage={setSuccessMessage}
-            />
-          </MDBCol>
         </MDBRow>
       </MDBContainer>
     </>

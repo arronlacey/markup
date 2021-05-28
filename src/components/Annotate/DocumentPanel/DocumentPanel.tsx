@@ -1,4 +1,5 @@
 import Scrollbars from "react-custom-scrollbars-2"
+import SessionPanel from "../SessionPanel/SessionPanel"
 
 import "./DocumentPanel.css"
 
@@ -11,7 +12,10 @@ function DocumentPanel(props: any): JSX.Element {
 
   return (
     <div className="panel">
+
       <Scrollbars autoHide>
+        <SessionPanel/>
+
         <div
           id="document-text"
           className="panel-content document-text"

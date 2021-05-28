@@ -1,7 +1,7 @@
 import Tooltip from "@markup/components/Setup/helpers/Tooltip"
 import Title from "@markup/helpers/Title"
 import { MDBBtn, MDBCol, MDBRow } from "mdbreact"
-import React, { useState } from "react"
+import { useState } from "react"
 import { useEffect } from "react"
 
 import "./DataGenerator.css"
@@ -45,9 +45,9 @@ function DataGenerator(): JSX.Element {
 
             {variableType === "numerical" &&
               <>
-                <input className="data-generator-input" style={{width: "33%"}} type="number" min="0" placeholder="Low (e.g. 0)"/>
-                <input className="data-generator-input" style={{width: "33%"}} type="number" min="0" placeholder="High (e.g. 1000)"/>
-                <input className="data-generator-input" style={{width: "33%"}} type="number" min="0" placeholder="Step (e.g. 5)"/>
+                <input className="data-generator-input ex" style={{width: "33%"}} type="number" min="0" placeholder="Low (e.g. 0)"/>
+                <input className="data-generator-input ex" style={{width: "33%"}} type="number" min="0" placeholder="High (e.g. 1000)"/>
+                <input className="data-generator-input ex" style={{width: "33%"}} type="number" min="0" placeholder="Step (e.g. 5)"/>
               </>
             }
 
