@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import {
   MDBBtn,
   MDBCardBody,
@@ -6,9 +7,14 @@ import {
 } from "mdbreact"
 
 import Endpoint from "@markup/helpers/Endpoint"
+import Title from "@markup/helpers/Title"
 import "./Home.css"
 
 function Home(): JSX.Element {
+  useEffect(() => {
+    document.title = Title.Home
+  })
+
   return (    
     <MDBJumbotron className="text-center">
       <MDBCardBody>

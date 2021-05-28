@@ -1,9 +1,9 @@
-import Title from "@markup/components/Setup/helpers/Title"
+import Header from "@markup/components/Setup/helpers/Header"
 
 function SetupFaq(): JSX.Element {
   return (
     <>
-      <Title message="FAQ"/>
+      <Header message="FAQ"/>
 
       <QuestionAndAnswer
         question="Do you store my data?"

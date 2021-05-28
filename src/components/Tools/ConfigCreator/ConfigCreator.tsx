@@ -2,8 +2,14 @@ import { MDBBtn, MDBCol, MDBRow } from "mdbreact"
 
 import Tooltip from "@markup/components/Setup/helpers/Tooltip"
 import "./ConfigCreator.css"
+import { useEffect } from "react";
+import Title from "@markup/helpers/Title";
 
 function ConfigCreator(): JSX.Element {
+  useEffect(() => {
+    document.title = Title.ConfigCreator
+  })
+
   return (
     <div className="config-creator-container">
       <MDBRow>

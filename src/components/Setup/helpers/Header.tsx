@@ -1,4 +1,4 @@
-function Title(props: any): JSX.Element {
+function Header(props: any): JSX.Element {
   return (
     <>
       <h4>{props.message}</h4>
@@ -7,4 +7,4 @@ function Title(props: any): JSX.Element {
   )
 }
 
-export default Title
+export default Header

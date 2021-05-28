@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { MDBAlert, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
 import AnnotationPanel from "@markup/components/Annotate/AnnotationPanel/AnnotationPanel"
@@ -6,15 +6,20 @@ import ConfigPanel from "@markup/components/Annotate/ConfigPanel/ConfigPanel"
 import DocumentPanel from "@markup/components/Annotate/DocumentPanel/DocumentPanel"
 import Endpoint from "@markup/helpers/Endpoint"
 import SessionPanel from "./SessionPanel/SessionPanel"
+import Title from "@markup/helpers/Title"
 import "./Annotate.css"
 
 function Annotate(): JSX.Element {
   const [errorMessage, setErrorMessage] = useState("")
   const [successMessage, setSuccessMessage] = useState("")
 
-  if (localStorage.getItem("isSetup") !== "true") {
-    window.location.href = Endpoint.SetupForm
-  }
+  useEffect(() => {
+    document.title = Title.Annotate
+
+    if (localStorage.getItem("isSetup") !== "true") {
+      window.location.href = Endpoint.SetupForm
+    }
+  })
 
   return (
     <>

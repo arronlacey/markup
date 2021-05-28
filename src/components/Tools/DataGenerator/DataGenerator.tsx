@@ -1,6 +1,8 @@
 import Tooltip from "@markup/components/Setup/helpers/Tooltip"
+import Title from "@markup/helpers/Title"
 import { MDBBtn, MDBCol, MDBRow } from "mdbreact"
 import React, { useState } from "react"
+import { useEffect } from "react"
 
 import "./DataGenerator.css"
 
@@ -13,6 +15,10 @@ function DataGenerator(): JSX.Element {
     const quantityRangeValue = parseInt(quantityRange.value)
     setQuantity(quantityRangeValue)
   }
+
+  useEffect(() => {
+    document.title = Title.DataGenerator
+  })
 
   return (
     <div className="data-generator-container">

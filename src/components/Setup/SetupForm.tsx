@@ -1,12 +1,14 @@
 import { SyntheticEvent, useState } from "react"
+import { useEffect } from "react"
 import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
 import Endpoint from "@markup/helpers/Endpoint"
 import FileForm from "@markup/components/Setup/FileForm/FileForm"
 import FolderForm from "@markup/components/Setup/FolderForm/FolderForm"
-import Title from "@markup/components/Setup/helpers/Title"
+import Header from "@markup/components/Setup/helpers/Header"
 import Tooltip from "@markup/components/Setup/helpers/Tooltip"
 import SetupFaq from "@markup/components/Setup/SetupFaq/SetupFaq"
+import Title from "@markup/helpers/Title"
 import "./SetupForm.css"
 
 enum DocumentQuantity {
@@ -23,12 +25,16 @@ function SetupForm(): JSX.Element {
     window.location.href = Endpoint.Annotate
   }
 
+  useEffect(() => {
+    document.title = Title.Setup
+  })
+
   return (
     <MDBContainer>
       <MDBRow className="setup-row">
         <MDBCol md="6" className="setup-column">
           <form >
-            <Title message="Setup"/>
+            <Header message="Setup"/>
 
             <label htmlFor="defaultFormRegisterNameEx" className="grey-text">
               <span className="required-field">*</span>

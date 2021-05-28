@@ -1,7 +1,14 @@
+import { useEffect } from "react"
+
 import Endpoint, { NewTab } from "@markup/helpers/Endpoint"
+import Title from "@markup/helpers/Title"
 import "./Docs.css"
 
 function Docs(): JSX.Element {
+  useEffect(() => {
+    document.title = Title.Docs
+  })
+
   return (
     <div className="docs">
       <Section
