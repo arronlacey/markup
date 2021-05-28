@@ -1,5 +1,5 @@
-import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 import { SyntheticEvent, useState } from "react"
+import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
 import Endpoint from "@markup/helpers/Endpoint"
 import FileForm from "@markup/components/Setup/FileForm/FileForm"

@@ -1,5 +1,6 @@
 import { MDBBtn, MDBCol, MDBRow } from "mdbreact"
 
+import Tooltip from "@markup/components/Setup/helpers/Tooltip"
 import "./ConfigCreator.css"
 
 function ConfigCreator(): JSX.Element {
@@ -8,18 +9,25 @@ function ConfigCreator(): JSX.Element {
       <MDBRow>
         <MDBCol md="12">
           <div className="config-creator-panel">
-            <h3 className="config-creator-header">Entites (i)</h3>
-            <input className="config-creator-input" placeholder="Name (e.g. doseUnit)"/>
-            <MDBBtn className="config-creator-button">Add Variable</MDBBtn>
+            <p>
+              <span className="config-creator-header">Entities</span>
+              <Tooltip message="The number of documents you intend to annotate."/>
+            </p>
+            <input className="config-creator-input" placeholder="Type (e.g. Seizure)"/>
+            <MDBBtn className="config-creator-button">Add Entity</MDBBtn>
           </div>
         </MDBCol>
 
         <MDBCol md="12">
           <div className="config-creator-panel">
-            <h3 className="config-creator-header">Attributes (i)</h3>
-            <input className="config-creator-input" placeholder="Input sequence (e.g. She is taking $drugDose $doseUnit of $drugName.)"/>
-            <input className="config-creator-input" placeholder="Target sequence (e.g. dose: $drugDose; unit: $doseUnit; name: $drugName;)"/>
-            <MDBBtn className="config-creator-button">Add Template</MDBBtn>
+            <p>
+              <span className="config-creator-header">Attributes</span>
+              <Tooltip message="The number of documents you intend to annotate."/>
+            </p>
+            <input className="config-creator-input resizeable" placeholder="Name (e.g. SeizureFrequency)"/>
+            <input className="config-creator-input resizeable" placeholder="Related entity (e.g. Seizure)"/>
+            <input className="config-creator-input resizeable" placeholder="Comma-seperated values (e.g. Daily, Weekly, Monthly)"/>
+            <MDBBtn className="config-creator-button">Add Attribute</MDBBtn>
           </div>
         </MDBCol>
       </MDBRow>
@@ -27,7 +35,7 @@ function ConfigCreator(): JSX.Element {
       <MDBRow>
         <MDBCol>
           <div className="config-creator-panel config-creator-panel-small">
-            <MDBBtn>Export Configs</MDBBtn>
+            <MDBBtn className="config-creator-output-button">Generate Config</MDBBtn>
           </div>
         </MDBCol>
       </MDBRow>

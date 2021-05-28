@@ -13,7 +13,7 @@
 
 .config-creator-panel-small {
     text-align: center;
-    height: 17.5vh;
+    min-height: 15vh;
 }
 
 .config-creator-header {
@@ -21,6 +21,7 @@
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 2.5%;
+    margin-right: 10px;
 }
 
 .config-creator-button {
@@ -31,14 +32,13 @@
     font-size: 18px;
     height: 50px;
     margin: 0;
-    text-transform: none;
 }
 
 .config-creator-input {
     background-color: white;
     color: #1A1E24;
     width: 100%;
-    padding: 8px;
+    padding: 8px 12.5px;
     margin-bottom: 1.5%;
     border-radius: 3px;
     outline: none;
@@ -46,4 +46,12 @@
     font-size: 18px;
     border: none;
     box-shadow: 0px 0.25px #1a1e24;
+}
+
+.config-creator-output-button {
+    font-weight: bold;
+    height: 50px;
+    font-size: 18px;
+    background-color: #33FFB5 !important;
+    color: black;
 }

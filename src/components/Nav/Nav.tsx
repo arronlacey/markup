@@ -51,8 +51,8 @@ function Nav(): JSX.Element {
               </MDBDropdownToggle>
 
               <MDBDropdownMenu>
-                <MDBDropdownItem href={Endpoint.DataGenerator}>Data Generator</MDBDropdownItem>
                 <MDBDropdownItem href={Endpoint.ConfigCreator}>Config Creator</MDBDropdownItem>
+                <MDBDropdownItem href={Endpoint.DataGenerator}>Data Generator</MDBDropdownItem>
               </MDBDropdownMenu>
             </MDBDropdown>
           </MDBNavItem>
