@@ -1,4 +1,7 @@
-const documentText2 = `
+import { SessionDocument } from "@markup/helpers"
+
+const docName = "demoDoc2.txt"
+const docText = `
 Problem: Three episodes of transient loss of consciousness.
 
 Diagnosis:            Epilepsy, probable focal onset
@@ -10,4 +13,10 @@ He has hypertension and hypercholesterolaemia for which he is taking atorvastati
 Plan: I suggest he increases the lamotrigine in steps of 25mg every fortnight to a new dose of 75mg bd. I will request a MRI brain and ask the epilepsy nurses to go over the new diagnosis of epilepsy. We had a discussion about the DVLA driving regulations which state that he needs to be a year free of seizures before driving again. He can contact us on our epilepsy helpline should he run into difficulties
 `
 
-export { documentText2 }
+const demoDoc2: SessionDocument = {
+    "name": docName,
+    "text": docText,
+    "annotations": "",
+}
+
+export { demoDoc2 }

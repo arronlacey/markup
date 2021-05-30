@@ -1,4 +1,7 @@
-const documentText0 = `
+import { SessionDocument } from "@markup/helpers"
+
+const docName = "demoDoc0.txt"
+const docText = `
 Dear Dr.
 
 I reviewed this 42 year old lady with epilepsy, together with her husband, in clinic today. She tells me that she has been getting episodes around twice a week of an unusual thought. This was difficult to describe but it was like an overfamiliar or deja vu feeling. These thoughts last for around 30 seconds. I think these are in keeping with temporal lobe onset focal seizures. This is interesting as previously she was getting events with coloured objects in her field of vision which were probably occipital lobe seizures.
@@ -8,4 +11,10 @@ Currently she is taking sodium valproate 500 mg twice a day and levetiracetam 10
 We also had a discussion about sudden death in epilepy (SUDEP). Overall this is rare, it is if real risk with people all continue to get seizures. We discussed things that can reduce the risk of SUDEP. These include not forgetting medication and controlling seizures. I will reveal Mrs Williams again in four months time.
 `
 
-export { documentText0 }
+const demoDoc0: SessionDocument = {
+    "name": docName,
+    "text": docText,
+    "annotations": "",
+}
+
+export { demoDoc0 }

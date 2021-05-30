@@ -1,4 +1,7 @@
-const documentText4 = `
+import { SessionDocument } from "@markup/helpers"
+
+const docName = "demoDoc4.txt"
+const docText = `
 Problem: Recurrant blackouts
 
 Diagnosis: Probable epilepsy, unclassified
@@ -20,4 +23,10 @@ Comments. I will request and EEG and reccomend that Mr Jones starts taking lamot
 I have given him some safety and driving advice and will ask our epilepsy nurses to contact him to go through things in more details
 `
 
-export { documentText4 }
+const demoDoc4: SessionDocument = {
+    "name": docName,
+    "text": docText,
+    "annotations": "",
+}
+
+export { demoDoc4 }

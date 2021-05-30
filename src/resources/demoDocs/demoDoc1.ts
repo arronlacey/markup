@@ -1,4 +1,7 @@
-const documentText1 = `
+import { SessionDocument } from "@markup/helpers"
+
+const docName = "demoDoc1.txt"
+const docText = `
 Diagnosis: Juvenile Myoclonic Epilepsy
 
 Seizure type and frequency: GTCS, 3 in the last two months
@@ -16,4 +19,10 @@ Comments: I would suggest that Mr Jones takes a higher dose of sodium valproate,
 I will give him another call in about a months time but he can contact us via the epilepsy helpline if he has any issues before then.
 `
 
-export { documentText1 }
+const demoDoc1: SessionDocument = {
+    "name": docName,
+    "text": docText,
+    "annotations": "",
+}
+
+export { demoDoc1 }

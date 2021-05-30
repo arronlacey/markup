@@ -1,30 +1,23 @@
 import { useEffect, useState } from "react"
 import Scrollbars from "react-custom-scrollbars-2"
 
+import { SessionDocument, SessionStorage } from "@markup/helpers"
 import NavigationPanel from "./NavigationPanel/NavigationPanel"
-import { SetupStorageKey } from "@markup/helpers"
 import "./DocumentPanel.css"
 
 function DocumentPanel(props: any): JSX.Element {
-  const documentQuantity = localStorage.getItem(SetupStorageKey.Quantity)
-  const minDocumentIndex = 0
-  let maxDocumentIndex
-
-  if (documentQuantity !== null) {
-    maxDocumentIndex = parseInt(documentQuantity) - 1
-  }
-
   const [documentIndex, setDocumentIndex] = useState(0)
   const [documentText, setDocumentText] = useState("")
 
   useEffect(() => {
-    const key = SetupStorageKey.DocumentN + documentIndex
-    const currentDocumentText = localStorage.getItem(key)
-
-    if (currentDocumentText == null || currentDocumentText.trim() === "") {
+    const key = SessionStorage.DocumentN + documentIndex
+    const storedDocument = localStorage.getItem(key)
+    
+    if (storedDocument == null || storedDocument.trim() === "") {
       props.setErrorMessage("You need to provide a valid document. Read the docs for more info.")
     } else {
-      setDocumentText(currentDocumentText)
+      const parsedDocument = JSON.parse(storedDocument) as SessionDocument
+      setDocumentText(parsedDocument.text)
     }
   }, [props, documentIndex, documentText, setDocumentText])
 
@@ -34,8 +27,6 @@ function DocumentPanel(props: any): JSX.Element {
         <NavigationPanel
           documentIndex={documentIndex}
           setDocumentIndex={setDocumentIndex}
-          minDocumentIndex={minDocumentIndex}
-          maxDocumentIndex={maxDocumentIndex}
         />
 
         <div

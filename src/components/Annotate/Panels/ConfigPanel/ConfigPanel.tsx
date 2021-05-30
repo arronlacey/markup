@@ -5,11 +5,11 @@ import { DEFAULT_ATTRIBUTE, ATTRIBUTE_CATEGORY, parseAttributeValues } from "./S
 import { parseCategories } from "./Sections/helpers/CategoryHelper"
 import { DEFAULT_ENTITY, ENTITY_CATEGORY } from "./Sections/helpers/EntityHelper"
 import { EntitySection, AttributeSection, OntologySection, ActionSection } from "./Sections"
+import { SessionStorage } from "@markup/helpers"
 import "./ConfigPanel.css"
-import { SetupStorageKey } from "@markup/helpers"
 
 function ConfigPanel(props: any): JSX.Element {
-  const configText = localStorage.getItem(SetupStorageKey.Config)
+  const configText = localStorage.getItem(SessionStorage.Config)
   const categories = parseCategories(configText)
   
   const [entities, setEntities] = useState(DEFAULT_ENTITY)

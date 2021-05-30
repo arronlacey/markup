@@ -1,4 +1,7 @@
-const documentText3 = `
+import { SessionDocument } from "@markup/helpers"
+
+const docName = "demoDoc3.txt"
+const docText = `
 Diagnosis: Epilepsy, unclassified
 
 
@@ -15,4 +18,10 @@ I will see her again in a few months time but Mrs Williams can contact us via th
 Yours
 `
 
-export { documentText3 }
+const demoDoc3: SessionDocument = {
+    "name": docName,
+    "text": docText,
+    "annotations": "",
+}
+
+export { demoDoc3 }

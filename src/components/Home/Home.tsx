@@ -7,8 +7,8 @@ import {
   MDBJumbotron,
 } from "mdbreact"
 
-import { configText, demoDocs } from "@markup/resources/demo-docs"
-import { Endpoint, PageTitle, SetupStorageKey } from "@markup/helpers"
+import { configText, demoDocs } from "@markup/resources/demoDocs"
+import { Endpoint, PageTitle, SessionDocument, SessionStorage } from "@markup/helpers"
 import "./Home.css"
 
 function Home(): JSX.Element {
@@ -46,13 +46,13 @@ function Home(): JSX.Element {
 }
 
 function startDemoSession(): void {
-  localStorage.setItem(SetupStorageKey.IsReady, "true")
-  localStorage.setItem(SetupStorageKey.Quantity, demoDocs.length.toString())
-  localStorage.setItem(SetupStorageKey.Config, configText)
+  localStorage.setItem(SessionStorage.IsReady, "true")
+  localStorage.setItem(SessionStorage.Quantity, demoDocs.length.toString())
+  localStorage.setItem(SessionStorage.Config, configText)
 
-  demoDocs.forEach((documentText: string, index: number) => {
-    const key = SetupStorageKey.DocumentN + index
-    localStorage.setItem(key, documentText)
+  demoDocs.forEach((document: SessionDocument, index: number) => {
+    const key = SessionStorage.DocumentN + index
+    localStorage.setItem(key, JSON.stringify(document))
   })
 
   window.location.href = Endpoint.Demo

@@ -1,7 +1,7 @@
 import { useEffect, useState, SyntheticEvent } from "react"
 import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
-import { Endpoint, Header, PageTitle, SetupStorageKey, Tooltip } from "@markup/helpers"
+import { Endpoint, Header, PageTitle, SessionStorage, Tooltip } from "@markup/helpers"
 import Faq from "@markup/components/Setup/Faq/Faq"
 import FileForm from "@markup/components/Setup/Form/FileForm/FileForm"
 import FolderForm from "./Form/FolderForm/FolderForm"
@@ -20,7 +20,7 @@ function Setup(): JSX.Element {
     document.title = PageTitle.Setup
 
     localStorage.setItem(
-      SetupStorageKey.Quantity,
+      SessionStorage.Quantity,
       documentQuantity.toString()
     )
   }, [documentQuantity])
@@ -82,7 +82,7 @@ function Setup(): JSX.Element {
 
 function startSession(event: SyntheticEvent): void {
   event.preventDefault()
-  localStorage.setItem(SetupStorageKey.IsReady, "true")
+  localStorage.setItem(SessionStorage.IsReady, "true")
   window.location.href = Endpoint.Annotate
 }
 
