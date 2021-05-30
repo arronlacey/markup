@@ -1,3 +1,4 @@
+const documentText3 = `
 Diagnosis: Epilepsy, unclassified
 
 
@@ -12,3 +13,6 @@ As you know MRIs in the past have been normal and an EEG from ten years ago show
 I will see her again in a few months time but Mrs Williams can contact us via the helpline before then if there are any issues.
 
 Yours
+`
+
+export { documentText3 }

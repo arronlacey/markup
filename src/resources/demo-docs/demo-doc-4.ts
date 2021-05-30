@@ -1,3 +1,4 @@
+const documentText4 = `
 Problem: Recurrant blackouts
 
 Diagnosis: Probable epilepsy, unclassified
@@ -17,3 +18,6 @@ Impression. On balance I think these events are probably epileptic seizures and 
 
 Comments. I will request and EEG and reccomend that Mr Jones starts taking lamotrigine, intially 25mg od increasing by 25mg every fortnight until he is taking 75mg twice a days.
 I have given him some safety and driving advice and will ask our epilepsy nurses to contact him to go through things in more details
+`
+
+export { documentText4 }

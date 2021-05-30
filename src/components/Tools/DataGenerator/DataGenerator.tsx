@@ -61,8 +61,8 @@ function DataGenerator(): JSX.Element {
               <Tooltip message="The number of documents you intend to annotate."/>
             </p>
 
-            <input className="data-generator-input resizeable" placeholder="Input sequence (e.g. She is taking $drugDose $doseUnit of $drugName.)"/>
-            <input className="data-generator-input resizeable" placeholder="Target sequence (e.g. dose: $drugDose; unit: $doseUnit; name: $drugName;)"/>
+            <input className="data-generator-input resizeable" placeholder="Template (e.g. She is taking $drugDose $doseUnit of $drugName.)"/>
+            <input className="data-generator-input resizeable" placeholder="Output (e.g. dose: $drugDose; unit: $doseUnit; name: $drugName;)"/>
             <MDBBtn className="data-generator-button">Add Template</MDBBtn>
           </div>
         </MDBCol>
@@ -86,7 +86,7 @@ function DataGenerator(): JSX.Element {
             </div>
             
             <div className="data-generator-output-container">
-              <MDBBtn className="data-generator-output-button">Generate Data</MDBBtn>
+              <MDBBtn className="primary-color font-weight-bold data-generator-output-button">Generate Data</MDBBtn>
             </div>
           </div>
         </MDBCol>

@@ -29,8 +29,7 @@
     color: black !important;
     font-weight: bold;
     width: 100%;
-    font-size: 18px;
-    height: 50px;
+    height: 35px;
     margin: 0;
 }
 
@@ -42,8 +41,7 @@
     margin-bottom: 1.5%;
     border-radius: 3px;
     outline: none;
-    height: 50px;
-    font-size: 18px;
+    height: 35px;
     border: none;
     box-shadow: 0px 0.25px #1a1e24;
 }

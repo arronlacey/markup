@@ -7,4 +7,4 @@ function Header(props: any): JSX.Element {
   )
 }
 
-export {Header}
+export { Header }

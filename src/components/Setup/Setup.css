@@ -5,13 +5,3 @@
 .setup-column {
     margin: 5% 2%;
 }
-
-.required-field {
-    color: red;
-    font-weight: bold;
-}
-
-.field-header {
-    margin: 5px;
-    color: white;
-}

@@ -9,4 +9,4 @@ function Tooltip(props: any): JSX.Element {
     )
 }
 
-export {Tooltip}
+export { Tooltip }

@@ -1,4 +1,6 @@
-function FileInput(props: any): JSX.Element {
+import { storeFile } from "@markup/helpers"
+
+function FileInputField(props: any): JSX.Element {
   const storeSingleFile = () => {
     const input = document.getElementById(props.id) as HTMLInputElement
 
@@ -8,15 +10,6 @@ function FileInput(props: any): JSX.Element {
       storeFile(file, props.storageName)
       displayFileNameInField(file.name)
     }
-  }
-
-  const storeFile = (file: Blob, storageName: string) => {
-    const reader = new FileReader()
-    reader.onload = () => {
-      const fileText = reader.result as string
-      localStorage.setItem(storageName, fileText)
-    }
-    reader.readAsText(file)
   }
   
   const displayFileNameInField = (fileName: string) => {
@@ -42,4 +35,4 @@ function FileInput(props: any): JSX.Element {
   )
 }
 
-export default FileInput
+export default FileInputField

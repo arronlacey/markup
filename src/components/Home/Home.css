@@ -24,8 +24,13 @@
 }
 
 .demo-link {
-    color: #e2ffea87;
+    color: #ffffff87;
     text-decoration: underline;
     font-size: 20px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.demo-link:hover {
+    color: #c9c9c987;
 }

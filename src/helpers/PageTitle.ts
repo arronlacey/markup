@@ -7,4 +7,4 @@ enum PageTitle {
   Annotate = "Annotate - Markup",
 }
 
-export {PageTitle}
+export { PageTitle }

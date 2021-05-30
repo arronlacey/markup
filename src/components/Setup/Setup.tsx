@@ -1,29 +1,29 @@
 import { useEffect, useState, SyntheticEvent } from "react"
 import { MDBBtn, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
-import { Endpoint, Header, PageTitle, Tooltip } from "@markup/helpers"
+import { Endpoint, Header, PageTitle, SetupStorageKey, Tooltip } from "@markup/helpers"
 import Faq from "@markup/components/Setup/Faq/Faq"
 import FileForm from "@markup/components/Setup/Form/FileForm/FileForm"
 import FolderForm from "./Form/FolderForm/FolderForm"
 import "./Setup.css"
 
-enum DocumentQuantity {
+enum SetupType {
   Single = "single",
   Multiple = "multiple"
 }
 
 function Setup(): JSX.Element {
-  const [quantity, setQuantity] = useState<String>(DocumentQuantity.Single)
-
-  const startSession = (event: SyntheticEvent) => {
-    event.preventDefault()
-    localStorage.setItem("isSetup", "true")
-    window.location.href = Endpoint.Annotate
-  }
+  const [documentQuantity, setDocumentQuantity] = useState(0)
+  const [setupType, setSetupType] = useState<String>(SetupType.Single)
 
   useEffect(() => {
     document.title = PageTitle.Setup
-  })
+
+    localStorage.setItem(
+      SetupStorageKey.Quantity,
+      documentQuantity.toString()
+    )
+  }, [documentQuantity])
 
   return (
     <MDBContainer>
@@ -38,15 +38,27 @@ function Setup(): JSX.Element {
               <Tooltip message="The number of documents you intend to annotate."/>
             </label>
             <div>
-              <select className="browser-default custom-select" onChange={event => setQuantity(event.target.value)}>
-                <option value={DocumentQuantity.Single}>Single document</option>
-                <option value={DocumentQuantity.Multiple}>Multiple documents</option>
+              <select
+                className="browser-default custom-select"
+                onChange={event => setSetupType(event.target.value)}
+              >
+                <option value={SetupType.Single}>Single document</option>
+                <option value={SetupType.Multiple}>Multiple documents</option>
               </select>
             </div>
-            <br />
+            <br/>
 
-            {quantity === DocumentQuantity.Single && <FileForm/>}
-            {quantity === DocumentQuantity.Multiple && <FolderForm/>}
+            {setupType === SetupType.Single &&
+              <FileForm
+                setDocumentQuantity={setDocumentQuantity}
+              />
+            }
+
+            {setupType === SetupType.Multiple &&
+              <FolderForm
+                setDocumentQuantity={setDocumentQuantity}
+              />
+            }
 
             <div className="text-center mt-4">
               <MDBBtn
@@ -66,6 +78,12 @@ function Setup(): JSX.Element {
       </MDBRow>
     </MDBContainer>
   )
+}
+
+function startSession(event: SyntheticEvent): void {
+  event.preventDefault()
+  localStorage.setItem(SetupStorageKey.IsReady, "true")
+  window.location.href = Endpoint.Annotate
 }
 
 export default Setup

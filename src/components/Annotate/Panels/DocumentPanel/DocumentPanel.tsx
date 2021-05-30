@@ -1,19 +1,42 @@
+import { useEffect, useState } from "react"
 import Scrollbars from "react-custom-scrollbars-2"
 
 import NavigationPanel from "./NavigationPanel/NavigationPanel"
+import { SetupStorageKey } from "@markup/helpers"
 import "./DocumentPanel.css"
 
 function DocumentPanel(props: any): JSX.Element {
-  const documentText = localStorage.getItem("documentText0")
+  const documentQuantity = localStorage.getItem(SetupStorageKey.Quantity)
+  const minDocumentIndex = 0
+  let maxDocumentIndex
 
-  if (documentText == null || documentText.trim() === "") {
-    props.setErrorMessage("You need to provide a valid document. Read the docs for more info.")
+  if (documentQuantity !== null) {
+    maxDocumentIndex = parseInt(documentQuantity) - 1
   }
+
+  const [documentIndex, setDocumentIndex] = useState(0)
+  const [documentText, setDocumentText] = useState("")
+
+  useEffect(() => {
+    const key = SetupStorageKey.DocumentN + documentIndex
+    const currentDocumentText = localStorage.getItem(key)
+
+    if (currentDocumentText == null || currentDocumentText.trim() === "") {
+      props.setErrorMessage("You need to provide a valid document. Read the docs for more info.")
+    } else {
+      setDocumentText(currentDocumentText)
+    }
+  }, [props, documentIndex, documentText, setDocumentText])
 
   return (
     <div className="panel">
       <Scrollbars autoHide>
-        <NavigationPanel/>
+        <NavigationPanel
+          documentIndex={documentIndex}
+          setDocumentIndex={setDocumentIndex}
+          minDocumentIndex={minDocumentIndex}
+          maxDocumentIndex={maxDocumentIndex}
+        />
 
         <div
           id="document-text"

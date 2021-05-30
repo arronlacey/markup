@@ -32,7 +32,7 @@ function ConfigCreator(): JSX.Element {
             <input className="config-creator-input resizeable" placeholder="Name (e.g. SeizureFrequency)"/>
             <input className="config-creator-input resizeable" placeholder="Related entity (e.g. Seizure)"/>
             <input className="config-creator-input resizeable" placeholder="Comma-seperated values (e.g. Daily, Weekly, Monthly)"/>
-            <MDBBtn className="config-creator-button">Add Attribute</MDBBtn>
+            <MDBBtn className="config-creator-button secondary-color font-weight-bold">Add Attribute</MDBBtn>
           </div>
         </MDBCol>
       </MDBRow>
@@ -40,7 +40,7 @@ function ConfigCreator(): JSX.Element {
       <MDBRow>
         <MDBCol>
           <div className="config-creator-panel config-creator-panel-small">
-            <MDBBtn className="config-creator-output-button">Generate Config</MDBBtn>
+            <MDBBtn className="primary-color font-weight-bold config-creator-output-button">Generate Config</MDBBtn>
           </div>
         </MDBCol>
       </MDBRow>

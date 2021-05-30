@@ -3,10 +3,12 @@ import {
   MDBBtn,
   MDBCardBody,
   MDBCardText,
-  MDBCardTitle, MDBJumbotron
+  MDBCardTitle,
+  MDBJumbotron,
 } from "mdbreact"
 
-import { Endpoint, PageTitle } from "@markup/helpers"
+import { configText, demoDocs } from "@markup/resources/demo-docs"
+import { Endpoint, PageTitle, SetupStorageKey } from "@markup/helpers"
 import "./Home.css"
 
 function Home(): JSX.Element {
@@ -33,12 +35,27 @@ function Home(): JSX.Element {
             Annotate
           </MDBBtn>
           <p>
-            <a href={Endpoint.Demo} className="demo-link">...or try a demo</a>
+            <span  onClick={() => startDemoSession()} className="demo-link">
+              ...or try a demo
+            </span>
           </p>
         </div>
       </MDBCardBody>
     </MDBJumbotron>
   )
+}
+
+function startDemoSession(): void {
+  localStorage.setItem(SetupStorageKey.IsReady, "true")
+  localStorage.setItem(SetupStorageKey.Quantity, demoDocs.length.toString())
+  localStorage.setItem(SetupStorageKey.Config, configText)
+
+  demoDocs.forEach((documentText: string, index: number) => {
+    const key = SetupStorageKey.DocumentN + index
+    localStorage.setItem(key, documentText)
+  })
+
+  window.location.href = Endpoint.Demo
 }
 
 export default Home

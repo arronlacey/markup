@@ -1,0 +1,9 @@
+.required-field {
+    color: red;
+    font-weight: bold;
+}
+
+.field-header {
+    margin: 5px;
+    color: white;
+}

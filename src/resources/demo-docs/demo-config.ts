@@ -1,3 +1,4 @@
+const configText = `
 [entities]
 ClinicDate
 Date_of_Birth
@@ -68,3 +69,6 @@ YearDate Arg:<ENTITY>, Value:0|This_Year|Last_Year|LastClinic|FromBirth|2018|201
 
 Certainty   Arg:<ENTITY>, Value:1|2|3|4|5
 Polarity Arg:<ENTITY>, Value:Affirmed|Negated
+`
+
+export { configText }

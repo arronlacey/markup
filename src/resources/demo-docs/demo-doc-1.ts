@@ -1,3 +1,4 @@
+const documentText1 = `
 Diagnosis: Juvenile Myoclonic Epilepsy
 
 Seizure type and frequency: GTCS, 3 in the last two months
@@ -13,3 +14,6 @@ As you know an MRI in 2015 was normal and the most recent EEG last year showed g
 Comments: I would suggest that Mr Jones takes a higher dose of sodium valproate, increasing to 800mg twice a day, then further by 100mg every week up to a maximum of 1000mg twice a day if necessary. At the next clinic appointment we can consider whether adding in brivetiracetam would be useful (Levetiracetam seemed to make his mood worse in the past).
 
 I will give him another call in about a months time but he can contact us via the epilepsy helpline if he has any issues before then.
+`
+
+export { documentText1 }

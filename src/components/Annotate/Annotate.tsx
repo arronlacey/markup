@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { MDBAlert, MDBCol, MDBContainer, MDBRow } from "mdbreact"
 
-import { PageTitle, Endpoint } from "@markup/helpers"
+import { PageTitle, Endpoint, SetupStorageKey } from "@markup/helpers"
 import ConfigPanel from "@markup/components/Annotate/Panels/ConfigPanel/ConfigPanel"
 import DocumentPanel from "./Panels/DocumentPanel/DocumentPanel"
 import OutputPanel from "./Panels/OutputPanel/OutputPanel"
@@ -14,7 +14,7 @@ function Annotate(): JSX.Element {
   useEffect(() => {
     document.title = PageTitle.Annotate
 
-    if (localStorage.getItem("isSetup") !== "true") {
+    if (localStorage.getItem(SetupStorageKey.IsReady) !== "true") {
       window.location.href = Endpoint.Setup
     }
   })

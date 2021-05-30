@@ -1,4 +1,4 @@
-function FolderInput(): JSX.Element {
+function FolderInputField(): JSX.Element {
   return (
     <div className="input-group">
       <div className="custom-file">
@@ -11,4 +11,4 @@ function FolderInput(): JSX.Element {
   )
 }
   
-export default FolderInput
+export default FolderInputField
